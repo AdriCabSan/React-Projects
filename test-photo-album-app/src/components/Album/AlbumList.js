@@ -7,7 +7,7 @@ const options = {
 
   url: 'api/photos',
   listQuery(options) {
-    console.log(options)
+    
     return {
       term: options.search,
       sort: options.sort,
@@ -17,7 +17,7 @@ const options = {
   },
 
   onError(response) {
-    console.log(response)
+    console.log("hubo error")
     return `${response.code}: ${response.message}`
   },
 
@@ -25,7 +25,6 @@ const options = {
     console.log('Value changed to %s', value)
   },
   onFetch(response) {
-  //  console.log(response[0])
     response = Array.from(response)
     console.log(response)
     return response.map((record)=> {
